@@ -2,9 +2,13 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const PDFDocument = require('pdfkit');
 const cors = require('cors');
+
 const app = express();
-app.use(express.json());
-app.use(cors()); // ← AGREGAR ESTO
+
+// ✅ CORS primero
+app.use(cors());
+
+// ✅ JSON parser
 app.use(express.json());
 
 // Puerto dinámico para Railway
